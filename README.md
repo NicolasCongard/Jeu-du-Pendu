@@ -1,4 +1,4 @@
-![image du Pendu]
+![](https://motsbleus.pages-informatique.com/motimg/jeudupendufb.jpg)
 
 # Le jeu du Pendu 
 * Par Nicolas Congard
@@ -50,12 +50,3 @@ affiché, c'est le bourreau qui gagnera. Le paysan, quant à lui, pourra remport
 
 ------
 Bonne partie !
-
-
-
-
-
-
-
-
-
