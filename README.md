@@ -11,7 +11,7 @@ Le célèbre jeu du Pendu adapté en console via Java.
 ## Aspects techniques 
 * méthode débutPartie()
 
-Annonce le début de la partie en demandant les noms des joueurs puis en en tirant au hasard lequel doit donner un mot.
+Annonce le début de la partie en demandant les noms des joueurs grâce à la classe *scanner* puis en en tirant au hasard lequel doit donner un mot.
 Le mot est ensuite transformé en tableau de caractères. Une copie de celui-ci est créé en remplaçant les lettres par des tirets.
 La console est alors nettoyé pour ne pas laisser le mot choisi affiché et visible.
 
