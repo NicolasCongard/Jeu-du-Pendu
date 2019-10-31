@@ -51,15 +51,31 @@ Essentielle pour corriger un bug qui permet en répetant la même bonne lettre d
 
 On appelle celle-ci lorsque la méthode **partie()** arrive à son terme. On propose le choix de relancer une partie en tapant "YES" ou non avec "NO" en utilisant toujours un *Scanner*. On compare la variable *réponse* et la réponse attendue avec *equals*.  Dans le premier cas, on rappelle **choisirMode()** dans l'autre le jeu se termine. Si aucune réponse est valide, on affiche un message d'erreur et on relance la méthode.
 
-**A VENIR**
-* ...
-
 ## Notice d'utilisation
 Le jeu du Pendu se joue d'une à deux personnes, de 7 à 77ans, directement dans la console. 
 
 Mode Multijoueurs : Chaque joueur donnera son nom puis le rôle de chacun sera défini par la suite : soit le bourreau soit le paysan. Le premier choisira un mot que le second devra retrouver en donnant une lettre à chaque tour. Si le paysan déclare une lettre juste alors celle-ci s'affichera, cependant si elle est fausse le dessin du Pendu commencera. A noter que le paysan ne dispose que de 10 essais ! Attention aussi de ne pas donner deux fois la même lettre, cela comptera comme une faute. Lorsque ce compteur tombera à 0 et que le Pendu sera totalement affiché, c'est le bourreau qui gagnera. Le paysan, quant à lui, pourra remporter la partie s'il trouve toutes les lettres du mot !
 
 Mode Solo : Le joueur joue contre l'ordinateur qui aura une liste de mots prédifinis et qui sera alors le bourreau.
+
+## Exemple d'utilisation
+
+| Lettre |   Mot  | Dessin |       Phrase affichée     | Nombre de essais : 10 |
+|:------:|:------:|:------:|:-------------------------:|:---------------------:|
+|   `x`  |`------`|        |    `Tu as faux !`         |`Il te reste 9 essais` |
+|   `l`  |`--l--l`|   -    |`Tu as trouvé une lettre !`|           -           |
+|   `r`  |`--l--l`|        |    `Tu as faux !`         |`Il te reste 8 essais` |
+|   `u`  |`--l--l`|        |    `Tu as faux !`         |`Il te reste 7 essais` |
+|   `s`  |`s-l--l`|   -    |`Tu as trouvé une lettre !`|           -           |
+|   `l`  |`s-l--l`|        |`Erreur, tu as déjà donné cette lettre !`|`Il te reste 6 essais`| 
+|   `b`  |`s-l--l`|        |    `Tu as faux !`         |`Il te reste 5 essais` |
+|   `n`  |`s-l--l`|        |    `Tu as faux !`         |`Il te reste 4 essais` |
+|   `i`  |`s-l-il`|   -    |`Tu as trouvé une lettre !`|           -           |
+|   `h`  |`s-l-il`|        |    `Tu as faux !`         |`Il te reste 3 essais` |
+|   `z`  |`s-l-il`|        |    `Tu as faux !`         |`Il te reste 2 essais` |
+|   `q`  |`s-l-il`|        |    `Tu as faux !`         |`Il te reste 1 essais` |
+|   `e`  |`s-leil`|   -    |`Tu as trouvé une lettre !`|           -           |
+|   `a`  |`s-leil`|        |`Quel échec ! Tu as perdu !`|`Il te reste 0 essais`|
 
 ------
 Bonne partie !
