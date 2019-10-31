@@ -1,6 +1,6 @@
 ![](https://zupimages.net/up/19/44/nxs1.jpeg)
 
-# Le jeu du Pendu 
+
 * Par Nicolas Congard
 * Projet Java 2 by Simplon.co 
 * Octobre 2019
