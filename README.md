@@ -9,22 +9,23 @@
 Le célèbre jeu du Pendu adapté en console via Java.
 
 ## Aspects techniques 
+* méthode afficher()
+
+Appelle simplement *débutPartie()*, *partie()* et *rejouer()*.
+
 * méthode débutPartie()
 
-Annonce le début de la partie en demandant les noms des joueurs grâce à la classe *scanner* puis en en tirant au hasard lequel doit donner un mot.
-Le mot est ensuite transformé en tableau de caractères. Une copie de celui-ci est créé en remplaçant les lettres par des tirets.
-La console est alors nettoyé pour ne pas laisser le mot choisi affiché et visible.
+Annonce le début de la partie en demandant les noms des joueurs grâce à la classe *Scanner* puis en tirant au hasard, via un *random*, lequel doit donner un mot.
+Le mot est ensuite transformé en tableau de caractères. Une copie de celui-ci est créé en remplaçant les lettres par des tirets avec un *repeat*.
+La console est alors nettoyée (*print.flush()*) pour ne pas laisser le mot choisi affiché et visible.
 
 * méthode partie()
 
-Demande une lettre au joueur. On appelle la méthode **trouveLettre()** qui permet dans le cas où elle retourne "true" d'afficher la
-lettre trouvée à la place du tiret correspondant à son emplacement et d'incrémenter la variable *bonnesRéponses*.
-Dans le cas où la valeur est "false" alors la variable *nombreEssais* est décrémenter et appelle dès lors la méthode 
-**dessinPendu()**. On vérifie pour chaque trajectoire si la fin du jeu est possible avec la méthode **finPartie()**.
+Demande une lettre au joueur toujours avec *Scanner*. On vérifie la possible existence de cette lettre dans la base de données avec **erreur()**. On appelle ensuite la méthode **trouveLettre()** qui permet dans le cas où elle retourne "true" d'afficher la lettre trouvée à la place du tiret correspondant à son emplacement et d'incrémenter la variable *bonnesRéponses*. On utilise pour cela une boucle *for*. Dans le cas où la valeur est "false" alors la variable *nombreEssais* est décrémenter et appelle dès lors la méthode **dessinPendu()**. On vérifie pour chaque trajectoire si la fin du jeu est possible avec la méthode **finPartie()**.
 
 * méthode trouveLettre()
 
-Renvoie un booléen si la lettre donnée est comprise dans le mot.
+Elle prend en paramètre la variable *lettre*. On utilise une boucle *for* pour renvoyer un booléen si la lettre donnée est comprise dans le mot.
 
 * méthode finPartie()
 
@@ -36,9 +37,13 @@ conditions n'entrent en compte alors on rappelle la méthode **partie()**.
 
 Affiche le dessin du Pendu pour chaque mauvaise réponse donnée. Elle repose sur la décrémentation de la variable *nombreEssais*.
 
-**A VENIR**
 * méthode erreur()
+
+Essentielle pour corriger un bug qui permet en répettant la même bonne lettre de remporter la partie. On crée une liste *lettres* afin de stocker les lettres déjà trouvées puis on regarde avec *contains* si la liste ne contient pas déjà la lettre. Si c'est le cas, un message s'affiche et décrémente *nombreEssais*.  
+
 * méthode rejouer()
+
+On appelle celle-ci lorsque la méthode **partie()** arrive à son terme. On propose le choix de relancer une partie en tapant "YES" ou non avec "NO" en utilisant toujours un *Scanner*. On compare la variable *réponse* et la réponse attendue avec *equals*.  Dans le premier cas, on rappelle **débutPartie()** dans l'autre le jeu se termine. Si aucune réponse est valide, on affiche un message d'erreur et on relance la méthode.
 
 ## Notice d'utilisation
 Le jeu du Pendu se joue à deux, de 7 à 77ans, directement dans la console. Chaque joueur donnera son nom puis le rôle de chacun sera
