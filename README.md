@@ -11,13 +11,11 @@ Le célèbre jeu du Pendu adapté en console via Java.
 ## Aspects techniques 
 * méthode afficher()
 
-> Appelle simplement *choisirMode()*, *partie()* et *rejouer()*.
+Appelle simplement *choisirMode()*, *partie()* et *rejouer()*.
 
 * méthode choisirMode()
 
-> Propose le choix du mode de jeu : multijoueurs en 1 vs 1 ou individuel contre l'ordinateur. On identifie ce choix avec la 
-> classe *Scanner* puis avec un *equals*. Ainsi selon l'option choisie, on oriente soit vers **partieMulti()** ou 
-> **partieSolo()**.
+Propose le choix du mode de jeu : multijoueurs en 1 vs 1 ou individuel contre l'ordinateur. On identifie ce choix avec la classe *Scanner* puis avec un *equals*. Ainsi selon l'option choisie, on oriente soit vers **partieMulti()** ou **partieSolo()**.
 
 * méthode partieMulti()
 
