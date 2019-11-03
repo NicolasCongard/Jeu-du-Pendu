@@ -11,19 +11,12 @@ Le célèbre jeu du Pendu adapté en console via Java.
 ## Aspects techniques 
 * méthode afficher()
 
-Appelle simplement *choisirMode()*, *partie()* et *rejouer()*.
+Appelle simplement *créationPartie* et *débutPartie*.
 
-* méthode choisirMode()
+* méthode créationPartie()
 
-Propose le choix du mode de jeu : multijoueurs en 1 vs 1 ou individuel contre l'ordinateur. On identifie ce choix avec la classe *Scanner* puis avec un *equals*. Ainsi selon l'option choisie, on oriente soit vers **partieMulti()** ou **partieSolo()**.
-
-* méthode partieMulti()
-
-Annonce le début de la partie en demandant les noms des joueurs grâce *Scanner* puis en tirant au hasard, via un *random*, lequel doit donner un mot. Le mot est ensuite transformé en tableau de caractères. Une copie de celui-ci est créé en remplaçant les lettres par des tirets avec un *repeat*. La console est alors nettoyée (*print.flush()*) pour ne pas laisser le mot choisi affiché et visible.
-
-* méthode partieSolo()
-
-Reprend le principe de la méthode **partieMulti()** mais avec un seul joueur. L'ordinateur a une liste prédéfinie de mots dont un sera tiré au sort (*random*). Pas besoin de nettoyer la console par contre.
+Version multi : annonce le début de la partie en demandant les noms des joueurs grâce *Scanner* puis en tirant au hasard, via un *random*, lequel doit donner un mot. Le mot est ensuite transformé en tableau de caractères. Une copie de celui-ci est créé en remplaçant les lettres par des tirets avec un *repeat*. La console est alors nettoyée (*print.flush()*) pour ne pas laisser le mot choisi affiché et visible.
+Version solo : reprend la version multi mais un mot est tiré au hasard dans une liste prédéfinie de l'ordinateur. Pas besoin de nettoyer la console dans ce cas.
 
 * méthode partie()
 
@@ -37,7 +30,7 @@ Elle prend en paramètre la variable *lettre*. On utilise une boucle *for* pour 
 
 Déclare la fin du jeu selon deux conditions. La première annonce la victoire lorsque les variables *bonnesRéponses* et
 *mot.length* correspondent. Si *nombreEssais* est à "0" alors la défaite du joueur est annoncée. Si aucune de ces 
-conditions n'entrent en compte alors on rappelle la méthode **partie()**.
+conditions n'entrent en compte alors on rappelle la méthode **débutPartie()**.
 
 * méthode dessinPendu()
 
@@ -46,10 +39,6 @@ Affiche le dessin du Pendu pour chaque mauvaise réponse donnée. Elle repose su
 * méthode erreur()
 
 Essentielle pour corriger un bug qui permet en répetant la même bonne lettre de remporter la partie. On crée une liste *lettres* afin de stocker les lettres déjà trouvées puis on regarde avec *contains* si la liste ne contient pas déjà la lettre. Si c'est le cas, un message s'affiche et décrémente *nombreEssais*.  
-
-* méthode rejouer()
-
-On appelle celle-ci lorsque la méthode **partie()** arrive à son terme. On propose le choix de relancer une partie en tapant "YES" ou non avec "NO" en utilisant toujours un *Scanner*. On compare la variable *réponse* et la réponse attendue avec *equals*.  Dans le premier cas, on rappelle **choisirMode()** dans l'autre le jeu se termine. Si aucune réponse est valide, on affiche un message d'erreur et on relance la méthode.
 
 ## Notice d'utilisation
 Le jeu du Pendu se joue d'une à deux personnes, de 7 à 77ans, directement dans la console. 
@@ -62,20 +51,20 @@ Mode Solo : Le joueur joue contre l'ordinateur qui aura une liste de mots prédi
 
 | Lettre |   Mot  | Dessin |       Phrase affichée     | Nombre de essais : 10 |
 |:------:|:------:|:------:|:-------------------------:|:---------------------:|
-|   `x`  |`------`|        |    `Tu as faux !`         |`Il te reste 9 essais` |
+|   `x`  |`------`|  ![](https://www.casimages.com/i/191103051728879493.png.html) |    `Tu as faux !`         |`Il te reste 9 essais` |
 |   `l`  |`--l--l`|   -    |`Tu as trouvé une lettre !`|           -           |
-|   `r`  |`--l--l`|        |    `Tu as faux !`         |`Il te reste 8 essais` |
-|   `u`  |`--l--l`|        |    `Tu as faux !`         |`Il te reste 7 essais` |
+|   `r`  |`--l--l`|  ![](https://www.casimages.com/i/191103051729124246.png.html) |    `Tu as faux !`         |`Il te reste 8 essais` |
+|   `u`  |`--l--l`|  ![]() |    `Tu as faux !`         |`Il te reste 7 essais` |
 |   `s`  |`s-l--l`|   -    |`Tu as trouvé une lettre !`|           -           |
-|   `l`  |`s-l--l`|        |`Erreur, tu as déjà donné cette lettre !`|`Il te reste 6 essais`| 
-|   `b`  |`s-l--l`|        |    `Tu as faux !`         |`Il te reste 5 essais` |
-|   `n`  |`s-l--l`|        |    `Tu as faux !`         |`Il te reste 4 essais` |
+|   `l`  |`s-l--l`|  ![]() |`Erreur, tu as déjà donné cette lettre !`|`Il te reste 6 essais`| 
+|   `b`  |`s-l--l`|  ![]() |    `Tu as faux !`         |`Il te reste 5 essais` |
+|   `n`  |`s-l--l`|  ![]() |    `Tu as faux !`         |`Il te reste 4 essais` |
 |   `i`  |`s-l-il`|   -    |`Tu as trouvé une lettre !`|           -           |
-|   `h`  |`s-l-il`|        |    `Tu as faux !`         |`Il te reste 3 essais` |
-|   `z`  |`s-l-il`|        |    `Tu as faux !`         |`Il te reste 2 essais` |
-|   `q`  |`s-l-il`|        |    `Tu as faux !`         |`Il te reste 1 essais` |
+|   `h`  |`s-l-il`|  ![]() |    `Tu as faux !`         |`Il te reste 3 essais` |
+|   `z`  |`s-l-il`|  ![]() |    `Tu as faux !`         |`Il te reste 2 essais` |
+|   `q`  |`s-l-il`|  ![]() |    `Tu as faux !`         |`Il te reste 1 essais` |
 |   `e`  |`s-leil`|   -    |`Tu as trouvé une lettre !`|           -           |
-|   `a`  |`s-leil`|        |`Quel échec ! Tu as perdu !`|`Il te reste 0 essais`|
+|   `a`  |`s-leil`|  ![]() |`Quel échec ! Tu as perdu !`|`Il te reste 0 essais`|
 
 ------
 Bonne partie !
