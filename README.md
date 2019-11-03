@@ -49,21 +49,21 @@ Mode Solo : Le joueur joue contre l'ordinateur qui aura une liste de mots prédi
 
 ## Exemple d'utilisation
 
-| Lettre |   Mot  | Dessin |       Phrase affichée     | Nombre de essais : 10 |
-|:------:|:------:|:------:|:-------------------------:|:---------------------:|
-|   `x`  |A trouver : `------`|![](https://nsa40.casimages.com/img/2019/11/03/mini_191103051728879493.png) |`Tu as faux !`|`Il te reste 9 essais`|
-|   `l`  |`--l--l`|   -    |`Tu as trouvé une lettre !`|           -           |
-|   `r`  |`--l--l`|![](https://nsa40.casimages.com/img/2019/11/03/mini_191103051729124246.png) |`Tu as faux !`|`Il te reste 8 essais`|
+| Lettre |   Mot à trouver  | Dessin |       Phrase affichée     | Nombre d' essais : 10 |
+|:------:|:----------------:|:------:|:-------------------------:|:---------------------:|
+|   `x`  |`------`|![](https://nsa40.casimages.com/img/2019/11/03/mini_191103051728879493.png) |`Tu as faux !`|`Il te reste 9 essais`|
+|   `l`  |`--l--l`          |   -    |`Tu as trouvé une lettre !`|           -           |
+|   `r`  |`--l--l`|![](https://nsa40.casimages.com/img/2019/11/03/mini_191103053424534311.png) |`Tu as faux !`|`Il te reste 8 essais`|
 |   `u`  |`--l--l`|![](https://nsa40.casimages.com/img/2019/11/03/mini_19110305172717326.png) |`Tu as faux !`|`Il te reste 7 essais`|
-|   `s`  |`s-l--l`|   -    |`Tu as trouvé une lettre !`|           -           |
+|   `s`  |`s-l--l`          |   -    |`Tu as trouvé une lettre !`|           -           |
 |   `l`  |`s-l--l`|![](https://nsa40.casimages.com/img/2019/11/03/mini_191103051726902739.png) |`Erreur, tu as déjà donné cette lettre !`|`Il te reste 6 essais`| 
 |   `b`  |`s-l--l`|![](https://nsa40.casimages.com/img/2019/11/03/mini_191103051727600683.png) |`Tu as faux !`|`Il te reste 5 essais`|
 |   `n`  |`s-l--l`|![](https://nsa40.casimages.com/img/2019/11/03/mini_191103051727282969.png) |`Tu as faux !` |`Il te reste 4 essais`|
-|   `i`  |`s-l-il`|   -    |`Tu as trouvé une lettre !`|           -           |
+|   `i`  |`s-l-il`          |   -    |`Tu as trouvé une lettre !`|           -           |
 |   `h`  |`s-l-il`|![](https://nsa40.casimages.com/img/2019/11/03/mini_191103051727853691.png) |`Tu as faux !`|`Il te reste 3 essais`|
 |   `z`  |`s-l-il`|![](https://nsa40.casimages.com/img/2019/11/03/mini_191103051728107682.png) |`Tu as faux !`|`Il te reste 2 essais`|
 |   `q`  |`s-l-il`|![](https://nsa40.casimages.com/img/2019/11/03/mini_191103051728107682.png) |`Tu as faux !`|`Il te reste 1 essais`|
-|   `e`  |`s-leil`|   -    |`Tu as trouvé une lettre !`|           -           |
+|   `e`  |`s-leil`          |   -    |`Tu as trouvé une lettre !`|           -           |
 |   `a`  |`s-leil`|![](https://nsa40.casimages.com/img/2019/11/03/mini_191103051728622617.png) |`Quel échec ! Tu as perdu !`|`Il te reste 0 essais`|
 
 ------
