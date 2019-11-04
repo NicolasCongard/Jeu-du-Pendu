@@ -18,7 +18,7 @@ Appelle simplement *créationPartie* et *débutPartie*.
 Version multi : annonce le début de la partie en demandant les noms des joueurs grâce *Scanner* puis en tirant au hasard, via un *random*, lequel doit donner un mot. Le mot est ensuite transformé en tableau de caractères. Une copie de celui-ci est créé en remplaçant les lettres par des tirets avec un *repeat*. La console est alors nettoyée (*print.flush()*) pour ne pas laisser le mot choisi affiché et visible.
 Version solo : reprend la version multi mais un mot est tiré au hasard dans une liste prédéfinie de l'ordinateur. Pas besoin de nettoyer la console dans ce cas.
 
-* méthode partie()
+* méthode débutPartie()
 
 Demande une lettre au joueur toujours avec *Scanner*. On vérifie la possible existence de cette lettre dans la base de données avec **erreur()**. On appelle ensuite la méthode **trouveLettre()** qui permet dans le cas où elle retourne "true" d'afficher la lettre trouvée à la place du tiret correspondant à son emplacement et d'incrémenter la variable *bonnesRéponses*. On utilise pour cela une boucle *for*. Dans le cas où la valeur est "false" alors la variable *nombreEssais* est décrémenter et appelle dès lors la méthode **dessinPendu()**. On vérifie pour chaque trajectoire si la fin du jeu est possible avec la méthode **finPartie()**.
 
