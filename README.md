@@ -11,7 +11,7 @@ Le célèbre jeu du Pendu adapté en console via Java.
 ## Aspects techniques 
 * méthode afficher()
 
-Appelle simplement **créationPartie()** et **débutPartie()**.
+Appelle simplement **créationPartie()**,**débutPartie()** et **rejouerPartie()**.
 
 * méthode créationPartie()
 
@@ -29,16 +29,19 @@ Elle prend en paramètre la variable *lettre*. On utilise une boucle *for* pour 
 * méthode finPartie()
 
 Déclare la fin du jeu selon deux conditions. La première annonce la victoire lorsque les variables *bonnesRéponses* et
-*mot.length* correspondent. Si *nombreEssais* est à "0" alors la défaite du joueur est annoncée. Si aucune de ces 
-conditions n'entrent en compte alors on rappelle la méthode **débutPartie()**.
-
-* méthode dessinPendu()
-
-Affiche le dessin du Pendu pour chaque mauvaise réponse donnée. Elle repose sur la décrémentation de la variable *nombreEssais*.
+*mot.length* correspondent. Si *nombreEssais* est à "0" alors la défaite du joueur est annoncée et le mot à trouver est affiché. Si aucune de ces conditions n'entrent en compte alors on rappelle la méthode **débutPartie()**.
 
 * méthode erreur()
 
-Essentielle pour corriger un bug qui permet en répetant la même bonne lettre de remporter la partie. On crée une liste *lettres* afin de stocker les lettres déjà trouvées puis on regarde avec *contains* si la liste ne contient pas déjà la lettre. Si c'est le cas, un message s'affiche et décrémente *nombreEssais*.  
+Essentielle pour corriger un bug qui permet en répétant la même bonne lettre de remporter la partie. On crée une liste *lettres* afin de stocker les lettres déjà trouvées puis on regarde avec *contains* si la liste ne contient pas déjà la lettre. Si c'est le cas, un message s'affiche et décrémente *nombreEssais*. 
+
+* méthode rejouerPartie()
+
+Demande au joueur s'il veut relancer une partie en tapant "YES" ou non avec "NO". Dans le premier cas, on réinitialise la variable *nombreEssais* à 10 et on rappelle **afficher()**. Dans l'autre, un message de fin s'affiche. Si aucune réponse valide n'est tapée, un message d'erreur est annoncée et relance la méthode.
+
+* méthode dessinPendu()
+
+Affiche le dessin du Pendu pour chaque mauvaise réponse donnée. Elle repose sur la décrémentation de la variable *nombreEssais*. 
 
 ## Notice d'utilisation
 Le jeu du Pendu se joue d'une à deux personnes, de 7 à 77ans, directement dans la console. 
