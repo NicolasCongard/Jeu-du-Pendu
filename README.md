@@ -11,7 +11,7 @@ Le célèbre jeu du Pendu adapté en console via Java.
 ## Aspects techniques 
 * méthode afficher()
 
-Appelle simplement **créationPartie()**,**débutPartie()** et **rejouerPartie()**.
+Appelle simplement **créationPartie()**, **débutPartie()** et **rejouerPartie()**.
 
 * méthode créationPartie()
 
