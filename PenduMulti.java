@@ -5,7 +5,6 @@ import java.util.Scanner;
 
 public class PenduMulti
 {
-    
     String mot;
     char lettre;
     char[] motTableau;
@@ -20,6 +19,7 @@ public class PenduMulti
     {
         créationPartie();
         débutPartie();
+        rejouerPartie();
     }
     
     public void créationPartie()
@@ -130,6 +130,27 @@ public class PenduMulti
         débutPartie();
       }
     } 
+
+    public void rejouerPartie()
+    {
+      System.out.println("Tapez [YES] pour une nouvelle partie ou [NO] pour quitter le jeu.");
+      Scanner lectureScanner5 = new Scanner(System.in);
+      String réponse = lectureScanner5.nextLine().toUpperCase();
+      if (réponse.equals("YES"))
+      {
+        nombreEssais = 10;
+        afficher();
+      }
+      else if (réponse.equals("NO"))
+      {
+        System.out.println("Merci d'avoir joué, à bientôt !");
+      }
+      else
+      {
+        System.out.println("Veuillez saisir une réponse valide.");
+        rejouerPartie();
+      }
+    }
 
     public void dessinPendu()
     {
