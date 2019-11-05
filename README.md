@@ -15,7 +15,7 @@ Appelle simplement **créationPartie()**, **débutPartie()** et **rejouerPartie(
 
 * méthode créationPartie()
 
-Version multi : annonce le début de la partie en demandant les noms des joueurs grâce *Scanner* puis en tirant au hasard, via un *random*, lequel doit donner un mot. Le mot est ensuite transformé en tableau de caractères. Une copie de celui-ci est créé en remplaçant les lettres par des tirets avec un *repeat*. La console est alors nettoyée (*print.flush()*) pour ne pas laisser le mot choisi affiché et visible.
+Version multi : annonce le début de la partie en demandant les noms des joueurs grâce à *Scanner* puis en tirant au hasard, via un *random*, lequel doit donner un mot. Le mot est ensuite transformé en tableau de caractères. Une copie de celui-ci est créé en remplaçant les lettres par des tirets avec un *repeat*. La console est alors nettoyée (*print.flush()*) pour ne pas laisser le mot choisi affiché et visible.
 Version solo : reprend la version multi mais un mot est tiré au hasard dans une liste prédéfinie de l'ordinateur. Pas besoin de nettoyer la console dans ce cas.
 
 * méthode débutPartie()
