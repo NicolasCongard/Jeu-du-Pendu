@@ -8,7 +8,7 @@ public class PenduMulti
     String mot;
     char lettre;
     char[] motTableau;
-    char[] motCachéTableau;
+    char[] motCacheTableau;
     int nombreEssais = 10;
     int nombreRéponse = 0;
     int resteEssais;
@@ -43,7 +43,7 @@ public class PenduMulti
         mot = lectureScanner3.nextLine().toLowerCase();
         motTableau= mot.toCharArray();
         String motCaché = "-".repeat(mot.length()); // https://stackoverflow.com/questions/7318359/how-to-replace-all-characters-in-a-java-string-with-stars
-        motCachéTableau = motCaché.toCharArray();
+        motCacheTableau = motCaché.toCharArray();
         System.out.print("\033[H\033[2J"); // https://stackoverflow.com/questions/2979383/java-clear-the-console
         System.out.flush();
         System.out.println("C'est désormais à ton adversaire de trouver une lettre !");
@@ -64,12 +64,12 @@ public class PenduMulti
         {
           if (motTableau[i] == lettre) 
           {
-            motCachéTableau[i] = motTableau[i];
+            motCacheTableau[i] = motTableau[i];
             bonneRéponse = nombreRéponse++;
           }    
         }
         System.out.println("Tu as trouvé une lettre ! ");
-        System.out.println(motCachéTableau);
+        System.out.println(motCacheTableau);
         finPartie();
       }   
       else
@@ -79,7 +79,7 @@ public class PenduMulti
         dessinPendu();
         System.out.println("Tu as faux ! Il te reste : "+(resteEssais-1)+" essais.");
         System.out.println("Rappel du mot à trouver :");
-        System.out.println(motCachéTableau);
+        System.out.println(motCacheTableau);
         finPartie();
       }
     }
@@ -99,7 +99,7 @@ public class PenduMulti
     public void erreur()
     {
       List<Character> lettres = new ArrayList<Character>();
-      for (Character l : motCachéTableau) 
+      for (Character l : motCacheTableau) 
       {
         if (l == lettre)
         {
@@ -108,7 +108,7 @@ public class PenduMulti
           dessinPendu();
           System.out.println("Attention tu as déjà donné cette lettre ! Il te reste : "+(resteEssais-1)+" essais.");
           System.out.println("Rappel du mot à trouver :");
-          System.out.println(motCachéTableau);
+          System.out.println(motCacheTableau);
           finPartie();
         }
       }

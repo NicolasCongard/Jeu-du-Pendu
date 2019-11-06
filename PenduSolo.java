@@ -8,21 +8,21 @@ public class PenduSolo
     String choixAleatoireMots;
     char lettre;
     char[] motsTableau;
-    char[] motsCachésTableau;
+    char[] motsCachesTableau;
     int nombreEssais = 10;
-    int nombreRéponse = 0;
+    int nombreReponse = 0;
     int resteEssais;
-    int bonneRéponse;
+    int bonneReponse;
     List<Character> lettres;
 
     public void afficher()
     {
-        créationPartie();
-        débutPartie();
+        creationPartie();
+        debutPartie();
         rejouerPartie();
     }
     
-    public void créationPartie()
+    public void creationPartie()
     {
         System.out.println("!! ATTENTION VEUILLEZ OUVRIR LA FENÊTRE DE LA CONSOLE AU MAXIMUM POUR UN MEILLEUR CONFORT DE JEU !!");
         System.out.println("Bienvenue au jeu du Pendu ! Commençons une partie !");
@@ -30,13 +30,13 @@ public class PenduSolo
         int indexMots = new Random().nextInt(mots.length) ;
         choixAleatoireMots = mots[indexMots] ;
         motsTableau = choixAleatoireMots.toCharArray() ;
-        String motsCachés = "-".repeat(choixAleatoireMots.length());
-        motsCachésTableau = motsCachés.toCharArray();
-        System.out.println("Voici le mot à trouvé : "+motsCachés);
+        String motsCaches = "-".repeat(choixAleatoireMots.length());
+        motsCachesTableau = motsCaches.toCharArray();
+        System.out.println("Voici le mot à trouvé : "+motsCaches);
         System.out.println("Tu as : "+nombreEssais+" essais.");
     }
     
-    public void débutPartie()
+    public void debutPartie()
     {
       System.out.println("Choisi une lettre ! ");
       Scanner lectureScanner4 = new Scanner(System.in);
@@ -49,12 +49,12 @@ public class PenduSolo
         {
           if (motsTableau[i] == lettre) 
           {
-            motsCachésTableau[i] = motsTableau[i];
-            bonneRéponse = nombreRéponse++;
+            motsCachesTableau[i] = motsTableau[i];
+            bonneReponse = nombreReponse++;
           }    
         }
         System.out.println("Tu as trouvé une lettre ! ");
-        System.out.println(motsCachésTableau);
+        System.out.println(motsCachesTableau);
         finPartie();
       }   
       else
@@ -64,7 +64,7 @@ public class PenduSolo
         dessinPendu();
         System.out.println("Tu as faux ! Il te reste : "+(resteEssais-1)+" essais.");
         System.out.println("Rappel du mot à trouver :");
-        System.out.println(motsCachésTableau);
+        System.out.println(motsCachesTableau);
         finPartie();
       }
     }
@@ -84,7 +84,7 @@ public class PenduSolo
     public void erreur()
     {
         List<Character> lettres = new ArrayList<Character>();
-        for (Character l : motsCachésTableau) 
+        for (Character l : motsCachesTableau) 
         {
             if (l == lettre)
             {
@@ -93,7 +93,7 @@ public class PenduSolo
                 dessinPendu();
                 System.out.println("Attention tu as déjà donné cette lettre ! Il te reste : "+(resteEssais-1)+" essais.");
                 System.out.println("Rappel du mot à trouver :");
-                System.out.println(motsCachésTableau);
+                System.out.println(motsCachesTableau);
                 finPartie();
             }
         }
@@ -102,7 +102,7 @@ public class PenduSolo
     public void finPartie()
     {
       
-      if (bonneRéponse+1 == choixAleatoireMots.length())
+      if (bonneReponse+1 == choixAleatoireMots.length())
       {
         System.out.println("Bravo tu as découvert le mot de l'ordinateur, tu as gagné !");
       }
@@ -114,7 +114,7 @@ public class PenduSolo
       }
       else
       {
-        débutPartie();
+        debutPartie();
       }
     } 
 
