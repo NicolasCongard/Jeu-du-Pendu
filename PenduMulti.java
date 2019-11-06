@@ -14,6 +14,8 @@ public class PenduMulti
     int resteEssais;
     int bonneReponse;
     List<Character> lettres;
+    Scanner lectureScanner = new Scanner(System.in);
+
 
     public void afficher()
     {
@@ -27,11 +29,9 @@ public class PenduMulti
         System.out.println("!! ATTENTION VEUILLEZ OUVRIR LA FENÊTRE DE LA CONSOLE AU MAXIMUM POUR UN MEILLEUR CONFORT DE JEU !!");
         System.out.println("Bienvenue au jeu du Pendu ! Commençons une partie !");
         System.out.println("Joueur 1, comment t'appelles-tu ?");
-        Scanner lectureScanner = new Scanner(System.in);
         String joueur1 = lectureScanner.nextLine();
         System.out.println("Joueur 2, comment t'appelles-tu ?");
-        Scanner lectureScanner2 = new Scanner(System.in);
-        String joueur2 = lectureScanner2.nextLine();
+        String joueur2 = lectureScanner.nextLine();
         String nombreDeJoueurs = joueur1 +","+joueur2;
         String[] listeJoueurs = nombreDeJoueurs.split(",");
         Random indexAleatoire = new Random();
@@ -39,8 +39,7 @@ public class PenduMulti
         String choixAleatoireJoueur = listeJoueurs[indexJoueur];
         System.out.println("Le joueur qui doit faire deviner le mot est : "+choixAleatoireJoueur);
         System.out.println(choixAleatoireJoueur+", tu dois choisir un mot.");
-        Scanner lectureScanner3 = new Scanner(System.in);
-        mot = lectureScanner3.nextLine().toLowerCase();
+        mot = lectureScanner.nextLine().toLowerCase();
         motTableau= mot.toCharArray();
         String motCaché = "-".repeat(mot.length()); // https://stackoverflow.com/questions/7318359/how-to-replace-all-characters-in-a-java-string-with-stars
         motCacheTableau = motCaché.toCharArray();
@@ -54,8 +53,7 @@ public class PenduMulti
     public void debutPartie()
     {
       System.out.println("Choisi une lettre ! ");
-      Scanner lectureScanner4 = new Scanner(System.in);
-      lettre = lectureScanner4.next(".").toLowerCase().charAt(0); // https://stackoverflow.com/questions/13942701/take-a-char-input-from-the-scanner
+      lettre = lectureScanner.next(".").toLowerCase().charAt(0); // https://stackoverflow.com/questions/13942701/take-a-char-input-from-the-scanner
 
       if (trouveLettre(lettre))
       {
@@ -134,8 +132,7 @@ public class PenduMulti
     public void rejouerPartie()
     {
       System.out.println("Tapez [YES] pour une nouvelle partie ou [NO] pour quitter le jeu.");
-      Scanner lectureScanner5 = new Scanner(System.in);
-      String réponse = lectureScanner5.nextLine().toUpperCase();
+      String réponse = lectureScanner.nextLine().toUpperCase();
       if (réponse.equals("YES"))
       {
         nombreEssais = 10;

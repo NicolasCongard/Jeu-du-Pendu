@@ -14,6 +14,7 @@ public class PenduSolo
     int resteEssais;
     int bonneReponse;
     List<Character> lettres;
+    Scanner lectureScanner = new Scanner(System.in);
 
     public void afficher()
     {
@@ -39,8 +40,7 @@ public class PenduSolo
     public void debutPartie()
     {
       System.out.println("Choisi une lettre ! ");
-      Scanner lectureScanner4 = new Scanner(System.in);
-      lettre = lectureScanner4.next(".").toLowerCase().charAt(0); // https://stackoverflow.com/questions/13942701/take-a-char-input-from-the-scanner
+      lettre = lectureScanner.next(".").toLowerCase().charAt(0); // https://stackoverflow.com/questions/13942701/take-a-char-input-from-the-scanner
 
       if (trouveLettre(lettre))
       {
@@ -121,8 +121,7 @@ public class PenduSolo
     public void rejouerPartie()
     {
       System.out.println("Tapez [YES] pour une nouvelle partie ou [NO] pour quitter le jeu.");
-      Scanner lectureScanner5 = new Scanner(System.in);
-      String réponse = lectureScanner5.nextLine().toUpperCase();
+      String réponse = lectureScanner.nextLine().toUpperCase();
       if (réponse.equals("YES"))
       {
         nombreEssais = 10;
