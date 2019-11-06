@@ -12,17 +12,17 @@ public class PenduMulti
     int nombreEssais = 10;
     int nombreRéponse = 0;
     int resteEssais;
-    int bonneRéponse;
+    int bonneReponse;
     List<Character> lettres;
 
     public void afficher()
     {
-        créationPartie();
-        débutPartie();
+        creationPartie();
+        debutPartie();
         rejouerPartie();
     }
     
-    public void créationPartie()
+    public void creationPartie()
     {
         System.out.println("!! ATTENTION VEUILLEZ OUVRIR LA FENÊTRE DE LA CONSOLE AU MAXIMUM POUR UN MEILLEUR CONFORT DE JEU !!");
         System.out.println("Bienvenue au jeu du Pendu ! Commençons une partie !");
@@ -51,7 +51,7 @@ public class PenduMulti
         System.out.println("Tu as : "+nombreEssais+" essais.");
       }
       
-    public void débutPartie()
+    public void debutPartie()
     {
       System.out.println("Choisi une lettre ! ");
       Scanner lectureScanner4 = new Scanner(System.in);
@@ -65,7 +65,7 @@ public class PenduMulti
           if (motTableau[i] == lettre) 
           {
             motCacheTableau[i] = motTableau[i];
-            bonneRéponse = nombreRéponse++;
+            bonneReponse = nombreRéponse++;
           }    
         }
         System.out.println("Tu as trouvé une lettre ! ");
@@ -116,7 +116,7 @@ public class PenduMulti
     
     public void finPartie()
     {
-      if (bonneRéponse+1 == mot.length())
+      if (bonneReponse+1 == mot.length())
       {
         System.out.println("Bravo tu as découvert le mot de ton adversaire, tu as gagné !");
       }
@@ -127,7 +127,7 @@ public class PenduMulti
       }
       else
       {
-        débutPartie();
+        debutPartie();
       }
     } 
 
